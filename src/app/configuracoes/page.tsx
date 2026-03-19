@@ -144,7 +144,13 @@ export default function Configuracoes() {
           {/* SEÇÃO DE AÇÕES */}
           <div className={styles.actionSection}>
             <h2>Ações da Conta</h2>
-            <button className={styles.logoutBtn} onClick={() => setModalAberto(false) || encerrarSessao()}>
+            <button
+              className={styles.logoutBtn}
+              onClick={() => {
+                setModalAberto(false);
+                encerrarSessao();
+              }}
+            >
               Sair da Conta
             </button>
             <button className={styles.desativarBtn} onClick={() => setModalDesativar(true)}>
