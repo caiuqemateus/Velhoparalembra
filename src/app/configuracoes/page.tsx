@@ -67,6 +67,11 @@ export default function Configuracoes() {
   }
 
   async function desativarConta() {
+    if (!user) {
+      alert("Usuário não encontrado.");
+      return;
+    }
+
     try {
       setAcaoExecutando(true);
       await api.put(`/users/${user.id}/desativar`);
@@ -82,22 +87,25 @@ export default function Configuracoes() {
   }
 
   async function deletarConta() {
-  try {
-    setAcaoExecutando(true);
-    await api.delete(`/users/${user.id}`, {
-      headers: { Authorization: `Bearer ${user.token}` }
-    });
-    setModalDeletar(false);
-    alert("Conta deletada com sucesso.");
-    logout?.();
-    router.push("/");
-  } catch (err) {
-    console.error(err);
-    alert("Erro ao deletar conta.");
-  } finally {
-    setAcaoExecutando(false);
+    if (!user) {
+      alert("Usuário não encontrado.");
+      return;
+    }
+
+    try {
+      setAcaoExecutando(true);
+      await api.delete(`/users/${user.id}`);
+      setModalDeletar(false);
+      alert("Conta deletada com sucesso.");
+      logout?.();
+      router.push("/");
+    } catch (err) {
+      console.error(err);
+      alert("Erro ao deletar conta.");
+    } finally {
+      setAcaoExecutando(false);
+    }
   }
-}
 
   function encerrarSessao() {
     logout?.();
