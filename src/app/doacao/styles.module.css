@@ -1,0 +1,236 @@
+/* 🌸 Página de Doação Estilizada - Versão Profissional */
+
+/* 🎨 Paleta e variáveis */
+:root {
+  --bg-gradient: linear-gradient(180deg,#cde0f0, #cde0f0);
+  --brand-primary: #e11d48;
+  --brand-dark: #be123c;
+  --brand-light: #fb7185;
+  --text-primary: #1f2937;
+  --text-muted: #6b7280;
+  --card-bg: #ffffff;
+  --border-color: #f3f4f6;
+  --success-color: #16a34a;
+  --radius: 20px;
+  --transition: all 0.25s ease;
+  --shadow-light: rgba(225, 29, 72, 0.15);
+  --shadow-dark: rgba(225, 29, 72, 0.25);
+  --font: 'Poppins', 'Inter', sans-serif;
+}
+
+/* 🌺 Container geral */
+.doacaoContainer {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0px;
+  font-family: var(--font);
+  color: var(--text-primary);
+}
+
+/* 💳 Card principal */
+.doacaoCard {
+  width: 100%;
+  max-width: 600px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 35px var(--shadow-light);
+  border: 1px solid var(--border-color);
+  padding: 40px 50px;
+  transition: var(--transition);
+  margin-top: 40px;
+}
+
+.doacaoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 45px var(--shadow-dark);
+}
+
+/* 🩷 Título e descrição */
+.titulo {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  margin-bottom: 8px;
+}
+
+.descricao {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ✍️ Formulário */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  --font: 'Poppins', 'Inter', sans-serif;
+  
+}
+
+/* 🧾 Inputs e Textareas */
+.form input,
+.form textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 14px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text-primary);
+  transition: var(--transition);
+  box-sizing: border-box;
+  font-family: var(--font) !important;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 8px rgba(225, 29, 72, 0.2);
+  transform: translateY(-1px);
+}
+
+.form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* 💸 Campo Valor da Doação */
+.form input[type="number"] {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 14px 16px;
+  color: var(--brand-dark);
+  text-align: center;
+}
+
+.form input[type="number"]::placeholder {
+  color: var(--brand-light);
+  font-weight: 500;
+}
+
+/* 💖 Botão principal */
+.form button[type="submit"] {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  color: white;
+  background: linear-gradient(90deg, var(--brand-primary) 0%, var(--brand-light) 100%);
+  box-shadow: 0 6px 20px var(--shadow-dark);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, var(--brand-dark), var(--brand-primary));
+}
+
+/* 💡 PIX Box */
+.pixBox {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 24px;
+  border: 2px dashed var(--brand-light);
+  border-radius: 16px;
+  background-color: #fff0f2;
+  transition: var(--transition);
+}
+
+.pixBox:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(225,29,72,0.2);
+}
+
+/* QR Code pulsante */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.qrCode {
+  border-radius: 12px;
+  border: 2px solid #eee;
+  margin: 16px 0;
+  width: 180px;
+  height: 180px;
+  animation: pulse 2s infinite;
+}
+
+/* Chave Pix e botão copiar */
+.pixChave {
+  margin-top: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.pixBox button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, var(--brand-primary) 0%, var(--brand-light) 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(225,29,72,0.2);
+}
+
+.pixBox button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, var(--brand-dark), var(--brand-primary));
+  box-shadow: 0 6px 18px rgba(225,29,72,0.35);
+}
+
+.pixBox button:active {
+  transform: translateY(0px);
+  box-shadow: 0 4px 12px rgba(225,29,72,0.2);
+}
+
+/* ✅ Mensagem de sucesso */
+.mensagemSucesso {
+  text-align: center;
+  margin-top: 16px;
+  color: var(--success-color);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 600px) {
+  .doacaoCard {
+    padding: 28px 22px;
+    margin-top: 30px;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+  }
+
+  .descricao {
+    font-size: 1rem;
+  }
+
+  .pixBox {
+    padding: 16px;
+  }
+
+  .qrCode {
+    width: 140px;
+    height: 140px;
+  }
+}

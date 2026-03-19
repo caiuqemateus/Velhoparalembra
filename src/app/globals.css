@@ -1,0 +1,59 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* ===== Bordas pretas globais para melhorar contraste visual =====
+   Estas regras aplicam uma borda discreta preta em elementos de
+   container e cartões mais comuns. Se quiser algo mais ou menos
+   intenso, posso ajustar os seletores ou a espessura. */
+
+/* Aplica borda aos containers principais com classe container */
+.container, .main, .card, .modal, .backdrop, .footer, header, .pet {
+  border: 1px solid rgba(0,0,0,0.9);
+}
+
+/* Inputs e selects recebem uma borda preta mais sutil */
+input, select, textarea, .select, .inputBusca {
+  border: 1px solid rgba(0,0,0,0.9) !important;
+}
+
+/* Ajuste em elementos com borda-radius para manter visual arredondado */
+.container, .card, .modal, .filtrosContainer, .emptyState {
+  border-radius: 10px;
+}
+
+/* Pequena exceção para o Header (mantém o estilo existente) */
+header { box-shadow: none; }
+

@@ -1,0 +1,319 @@
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #cde0f0;;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* LOGO ESQUERDO */
+.sideLeft {
+  background: linear-gradient(180deg, #b3e3e5, #a8d8da);
+  color: #2d5a60;
+  padding: 0;
+  width: 500px;
+  height: 890px;
+  border-radius: 12px 0 0 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+  
+.sideLeft h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.sideLeft p {
+  font-size: 15px;
+  color: #3d666d;
+}
+
+/* LOGO CENTRALIZADA */
+.logo {
+  width: 1000%;               /* Ajusta para ocupar boa parte da largura */
+  max-width: 300px;         /* Define um limite para não estourar */
+  margin: 0 auto;           /* Centraliza */
+  display: block;           /* Garante centralização */
+}
+.formContainer {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 890px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza o conteúdo verticalmente */
+  box-sizing: border-box;
+}
+
+/* TÍTULOS */
+.titulo {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  color: #4a707a;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* FORMULÁRIO DE CADASTRO */
+.formCadastrar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* CAMPOS DE TEXTO */
+.formCadastrar input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.formCadastrar input::placeholder {
+  color: #aaa;
+}
+
+.formCadastrar input:focus {
+  outline: none;
+  border-color: #4a707a;
+  box-shadow: 0 0 5px rgba(74, 112, 122, 0.3);
+}
+
+/* BOTÃO CADASTRAR */
+.botaoCadastrar {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f9b84b;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botaoCadastrar:hover {
+  background-color: #f7a930;
+  transform: scale(1.02);
+}
+
+.botaoCadastrar:active {
+  transform: scale(0.98);
+}
+
+/* BOTÃO DE TROCA (LOGIN/CADASTRAR) */
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toggleButton {
+  flex: 1;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggleButton:hover {
+  background-color: #ccc;
+}
+
+.active {
+  background-color: #f7a930;
+  color: white;
+}
+
+/* LINKS E TEXTOS SECUNDÁRIOS */
+.voltarLogin {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #4a707a;
+  cursor: pointer;
+}
+
+.voltarLogin:hover {
+  text-decoration: underline;
+}
+
+.termos {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-top: 10px;
+}
+
+.termos a {
+  color: #f9b84b;
+  text-decoration: none;
+}
+
+.termos a:hover {
+  text-decoration: underline;
+}
+
+
+/* 🌸 MODAIS GERAIS */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 🌼 Container do modal */
+.modalContainer {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2.8rem 2.2rem;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.4s ease-out;
+  position: relative;
+}
+
+/* ✅ Ícone superior decorativo */
+.modalContainer::before {
+  content: "🐾";
+  font-size: 2rem;
+  position: absolute;
+  top: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.9;
+}
+
+/* ✅ Modal de sucesso */
+.modalSuccess h3 {
+  color: #3ba1a8; /* tom que combina com o header */
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modalSuccess p {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.5;
+}
+
+/* ❌ Modal de erro */
+.modalError h3 {
+  color: #dc2626;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modalError p {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.5;
+}
+
+/* 💛 Botões dos modais */
+.modalButton {
+  background: #fbbf24;
+  color: #1f2937;
+  border: none;
+  border-radius: 14px;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(251, 191, 36, 0.35);
+}
+
+.modalButton:hover {
+  background: #f59e0b;
+  transform: scale(1.05);
+}
+
+/* ✨ Efeito de sucesso animado */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 💫 Microanimação de pulsar no ícone */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.modalContainer::before {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.voltarLoginButton {
+  background: none;
+  border: none;
+  color: #4a707a;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;
+}

@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Variáveis locais: limitadas ao escopo da página para não sobrescrever o Header global */
+.main {
+  /* variáveis de tema aplicadas apenas dentro de .main */
+  --primary: #43959b;
+  --primary-light: #6ae6d3;
+  --secondary: #2d5a60;
+  --text: #374151;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --page-bg: #f9fafb; /* renomeado para evitar conflito com --bg global */
+
+  min-height: 100vh;
+  background: var(--page-bg);
+  padding: 32px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.breadcrumb span:last-child {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Título e Botão de Cadastro */
+.titleSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--secondary);
+  margin: 0;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.cadastrarBtn {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(67, 149, 155, 0.2);
+}
+
+.cadastrarBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(67, 149, 155, 0.3);
+}
+
+.limparBtn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+  opacity: 0.8;
+}
+
+.limparBtn:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Container de Filtros */
+.filtrosContainer {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* Borda preta solicitada pelo usuário */
+  border: 2px solid #000;
+}
+
+.filtrosLinha1,
+.filtrosLinha2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.filtrosLinha2 {
+  margin-bottom: 0;
+}
+
+/* Selects e Inputs */
+.select,
+.inputBusca {
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.select:focus,
+.inputBusca:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(106, 230, 211, 0.1);
+}
+
+.inputBusca {
+  width: 100%;
+}
+
+/* Contador */
+.contador {
+  background: white;
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contadorTexto {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.statusStorage {
+  font-size: 13px;
+  color: var(--text-muted);
+  background: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Grid de Animais */
+.animaisGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* Estado Vazio */
+.emptyState {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.emptyState h3 {
+  font-size: 24px;
+  color: var(--secondary);
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.emptyState p {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0 0 32px 0;
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .titleSection {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .filtrosLinha1,
+  .filtrosLinha2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .animaisGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: 20px 0;
+  }
+  
+  .filtrosContainer {
+    padding: 16px;
+  }
+  
+  .emptyState {
+    padding: 60px 20px;
+  }
+  
+  .emptyIcon {
+    font-size: 48px;
+  }
+  
+  .emptyState h3 {
+    font-size: 20px;
+  }
+  
+  .emptyState p {
+    font-size: 14px;
+  }
+}
+
+/* Forçar texto preto para melhor legibilidade dentro do container de filtros */
+.filtrosContainer,
+.filtrosContainer * {
+  color: #000 !important;
+}
+
+.filtrosContainer input,
+.filtrosContainer select,
+.filtrosContainer textarea,
+.filtrosContainer .select,
+.filtrosContainer .inputBusca {
+  color: #000 !important;
+  background: #fff !important;
+}
+
+.filtrosContainer select option {
+  color: #000 !important;
+  background: #fff !important;
+}
+
+/* Garantir que o estado vazio também tenha texto escuro */
+.emptyState, .emptyState * {
+  color: #000 !important;
+}
