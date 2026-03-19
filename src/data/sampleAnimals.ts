@@ -1,6 +1,5 @@
-import Pet from '@/Models/Pet';
-
-export const cachorros: Pet[] = [
+// Sample data for demos (loose-typed)
+export const cachorros: any[] = [
   {
     id: 1001,
     nome: "Rex",
@@ -38,7 +37,7 @@ export const cachorros: Pet[] = [
   }
 ];
 
-export const gatos: Pet[] = [
+export const gatos: any[] = [
   {
     id: 2001,
     nome: "Mia",
