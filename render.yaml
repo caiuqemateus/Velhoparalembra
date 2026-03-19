@@ -1,0 +1,23 @@
+# Render blueprint for deploying this Next.js app as a Web Service.
+# Replace `repo` with your GitHub repository URL after you push the code.
+
+services:
+  - type: web
+    name: novo-amigo
+    env: node
+    plan: free
+    # repo: https://github.com/SEU_USUARIO/NOME_REPO.git
+    branch: main
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+# Notes:
+# - If you use environment variables (API keys, base URLs), add them on the
+#   Render dashboard under the service's Environment section (do NOT commit
+#   secrets to the repo).
+# - If you prefer Render to detect and create the service automatically,
+#   you can skip adding the `repo` field here and instead connect the repo
+#   via the Render web UI.
