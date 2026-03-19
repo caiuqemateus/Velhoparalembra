@@ -1,12 +1,12 @@
 "use client";
 
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { useAuth } from "@/contexts/AuthContext";
+import api from "@/services/api";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import styles from "./styles.module.css";
-import api from "@/services/api";
 
 export default function Configuracoes() {
   const { user, loading, logout } = useAuth();
